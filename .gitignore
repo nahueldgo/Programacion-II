@@ -1,0 +1,7 @@
+build/
+nbproject/private/
+*.class
+*.log
+nbproject/build-impl.xml
+nbproject/genfiles.properties
+manifest.mf
