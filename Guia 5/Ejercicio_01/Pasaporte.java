@@ -8,9 +8,10 @@ public class Pasaporte {
     private Foto foto;
     private Titular titular;
 
-    public Pasaporte(int numero, String fechaEmision) {
+    public Pasaporte(int numero, String fechaEmision, String imagen, String formato) {
         this.numero = numero;
         this.fechaEmision = fechaEmision;
+        this.foto = new Foto(imagen, formato);
     }
 
     public int getNumero() {
@@ -33,21 +34,21 @@ public class Pasaporte {
         return foto;
     }
 
-    public void setFoto(Foto foto) {
-        this.foto = foto;
-    }
-
     public Titular getTitular() {
         return titular;
     }
 
     public void setTitular(Titular titular) {
         this.titular = titular;
+        if (titular != null && titular.getPasaporte() != this){
+            titular.setPasaporte(this);
+        }
     }
     
     public void mostrarInfo(){
         System.out.println("Pasaporte N: "+numero);
         System.out.println("Fecha de emision: "+fechaEmision);
+        foto.mostrarInfo();
     }
 
 }

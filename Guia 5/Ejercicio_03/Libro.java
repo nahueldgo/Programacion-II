@@ -8,9 +8,10 @@ public class Libro {
     private Autor autor;
     private Editorial editorial;
 
-    public Libro(String titulo, int isbn) {
+    public Libro(String titulo, int isbn, Editorial editorial) {
         this.titulo = titulo;
         this.isbn = isbn;
+        this.editorial = editorial;
     }
 
     public Autor getAutor() {
@@ -48,6 +49,13 @@ public class Libro {
     public void mostrarInfo(){
         System.out.println("Titulo:"+titulo);
         System.out.println("ISBN: "+isbn);
+        if (autor != null) {
+        autor.mostrarInfo();
+    }
+    
+    if (editorial != null) {
+        editorial.mostrarInfo();
+    }
     }
     
 }

@@ -5,18 +5,16 @@ public class Main {
     
     public static void main(String[] args){
         
-        Foto foto = new Foto("3x3", "Imagen");
-        Pasaporte pasaporte = new Pasaporte(123456789, "01/01/2018");
+        Pasaporte pasaporte = new Pasaporte(123456789, "1/1/2018", "3x3", "JPEG");
         Titular titular = new Titular("Nahuel Dugo", 36617276);
         
-        pasaporte.setFoto(foto);
-        titular.setPasaporte(pasaporte);
-        pasaporte.setTitular(titular);
         
+        pasaporte.setTitular(titular);
+        titular.setPasaporte(pasaporte);
         pasaporte.mostrarInfo();
-        foto.mostrarInfo();
         titular.mostrarInfo();
     
     }
 }
 
+ 

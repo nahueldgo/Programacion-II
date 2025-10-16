@@ -9,10 +9,11 @@ public class Celular {
     private Bateria bateria;
     private Usuario usuario;
 
-    public Celular(int imei, String marca, String modelo) {
+    public Celular(int imei, String marca, String modelo, Bateria bateria) {
         this.imei = imei;
         this.marca = marca;
         this.modelo = modelo;
+        this.bateria = bateria;
     }
 
     public Bateria getBateria() {
@@ -29,6 +30,9 @@ public class Celular {
 
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
+        if (usuario != null && usuario.getCelular() != this) {
+            usuario.setCelular(this);
+        }
     }
     
     public int getImei() {
